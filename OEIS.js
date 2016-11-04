@@ -92,9 +92,7 @@
 
  function validate(num) {
  	if (typeof num !== 'number') {
- 		return new TypeError('Must be a valid number');
- 	} else {
- 		return null;
+ 		throw new TypeError(num + ' must be a valid number');
  	}
  }
 
@@ -110,13 +108,8 @@
  OEIS.prototype = {
 
  	getSequenceInfo: function(num, callback) {
- 		var err = validate(num);
- 		if (err) {
- 			callback(err, null);
- 			return;
- 		} else {
- 			getSequenceInfo(num, callback);	
- 		}
+ 		validate(num);
+ 		getSequenceInfo(num, callback);
  	},
 
 /**
@@ -124,25 +117,16 @@
 * contains all of the sequences in the OEIS database
 */
 getFullSequence: function(num, callback) {
-	var err = validate(num);
-	if (err) {
-		callback(err, null);
-		return;
-	} else {
-		getFullSequence(num, callback);
-	}
+	validate(num);
+	getFullSequence(num, callback);
 },
 
 /*
 * Performs synchronous scraping of sequence data to avoid overloading OEIS.org
 */
 getMultipleSequences: function(start, end, callback) {
-	var startErr = validate(start);
-	var endErr = validate(end);
-	if (startErr || endErr) {
-		callback(new TypeError('Must be a valid number'), null);
-		return;
-	}
+	validate(start);
+	validate(end);
 
 	var i = start;
 	async.whilst(function() {
