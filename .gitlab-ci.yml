@@ -6,7 +6,7 @@ stages:
   - deploy
 
 before_script:
-  - npm install
+  - npm install --silent
 
 test:
   stage: test
