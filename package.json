@@ -4,6 +4,7 @@
   "description": "Interface for getting data from OEIS.org",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "mocha tests"
   },
   "repository": {
