@@ -6,6 +6,12 @@ var should = chai.should();
 
 
 describe('OEIS', function() {
-  it('should list ALL blobs on /blobs GET');
+  it('Parses name from given html', function() {
+
+  });
+
+  it('Parses sequence from given html', function() {
+  	
+  });
   
 });
