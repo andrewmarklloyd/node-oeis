@@ -6,7 +6,7 @@ stages:
   - deploy
 
 before_script:
-  - echo 'before'
+  - npm install
 
 test:
   stage: test
