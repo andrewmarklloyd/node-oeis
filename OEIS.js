@@ -5,7 +5,10 @@
 
  var request = require('request');
  var fs = require('fs');
- 
+ var async = require('async');
+ var Entities = require('html-entities').AllHtmlEntities;
+ entities = new Entities();
+
 
  function sumList(seq) {
  	var sum = seq.reduce(function(a, b) {
@@ -45,6 +48,47 @@
  	});
  }
 
+ function getSequenceInfo(num, callback) {
+ 	var id = 'A' + pad(num, 6);
+ 	var url = 'http://oeis.org/' + id + '/internal';
+ 	
+ 	request(url, function (error, response, body) {
+ 		if (error) {
+ 			callback({error: error}, null);
+ 		} else {
+ 			var name = parseName(body);
+ 			//var seq = parseSequence(body);
+ 			callback(null, {id: id, name: entities.decode(name)});
+ 		}
+ 	});
+ }
+
+ function getFullSequence(num, callback) {
+ 	var id = pad(num, 6);
+ 	var url = 'http://oeis.org/A' + id + '/b' + id + '.txt';
+
+ 	request(url, function (error, response, body) {
+ 		if (error) {
+ 			callback({error: error}, null);
+ 		} else {
+ 			var list = body.split('\n');
+ 			var seq = [];
+			//console.log(list[0]);
+			list.forEach(function(item) {
+				if (item.indexOf('#') == -1 && item !== '') {
+					var line = item.split(' ');
+					var idx = Number(line[0]);
+					var element = Number(line[1]);
+					if (typeof idx !== 'number' || typeof element !== 'number') {
+						throw new Error('NOT A NUMBER', idx, element);
+					}
+					seq.push({idx: Number(line[0]), element: Number(line[1])});
+				}
+			});
+			callback(null, seq);
+		}
+	});
+ }
 
  module.exports = OEIS;
 
@@ -57,40 +101,41 @@
 
  OEIS.prototype = {
 
-/** 
- *	Given the id of an OEIS sequence and a callback function,
- *	returns the basic sequence information.
- */
- getSequence: function(num, callback) {
- 	var id = 'A' + pad(num, 6);
- 	var url = 'http://oeis.org/' + id + '/internal';
- 	
- 	request(url, function (error, response, body) {
- 		if (error) {
- 			callback({error: error}, null);
- 		} else {
- 			var name = parseName(body);
- 			var seq = parseSequence(body);
- 			callback(null, {id: id, name: name, seq: seq});
- 		}
- 	});
- },
+
+ 	getSequenceInfo: function(num, callback) {
+ 		getSequenceInfo(num, callback);
+ 	},
 
 /**
 *	Retreives the B-File (https://oeis.org/A<id>/b<id>.txt) which
 * contains all of the sequences in the OEIS database
 */
 getFullSequence: function(num, callback) {
-	var id = pad(num, 6);
-	var url = 'http://oeis.org/A' + id + '/b' + id + '.txt';
+	getFullSequence(num, callback);
+},
 
-	request(url, function (error, response, body) {
-		if (error) {
-			callback({error: error}, null);
-		} else {
-			console.log(body);
-		}
-	});
+/*
+* Performs synchronous scraping of sequence data to avoid overloading OEIS.org
+*/
+getMultipleSequences: function(start, end, callback) {
+	var i = start;
+	async.whilst(function() {
+		return i <= end;
+	},
+	function(next) {
+		getSequenceInfo(i, function(err, info) {
+			getFullSequence(i, function(err, seq) {
+				if (err) {throw err;}
+				callback({id: info.id, name: info.name, seq: seq});
+				i++;
+				next();
+			});
+		});
+	},
+	function(err) {
+		if (err) {console.log(err);}
+	}
+	);
 }
 }
 
