@@ -5,63 +5,70 @@
 
  var request = require('request');
  var fs = require('fs');
+ 
 
- function sumList(seq) {
- 	var sum = seq.reduce(function(a, b) {
- 		return a + b;
- 	});
- }
+ var connection;
 
- function pad(n, width, z) {
- 	z = z || '0';
- 	n = n + '';
- 	return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
- }
+function sumList(seq) {
+	var sum = seq.reduce(function(a, b) {
+		return a + b;
+	});
+}
 
- function parseLine(startKey, body) {
- 	var start_index = body.indexOf(startKey) + 3;
- 	var end_index = body.indexOf('</tt>', start_index);
- 	var line = body.substring(start_index, end_index -1);
- 	return line;
- }
+function pad(n, width, z) {
+	z = z || '0';
+	n = n + '';
+	return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
+}
 
- function parseName(body) {
- 	return parseLine('%N', body);
- }
+function parseLine(startKey, body) {
+	var start_index = body.indexOf(startKey) + 3;
+	var end_index = body.indexOf('</tt>', start_index);
+	var line = body.substring(start_index, end_index -1);
+	return line;
+}
 
- function parseSequence(body) {
- 	var sequence = [];
- 	var sLine = parseLine('%S', body);
+function parseName(body) {
+	return parseLine('%N', body);
+}
 
- 	if (body.indexOf('%T')) {
- 		sLine += parseLine('%T', body);
- 	}
- 	if (body.indexOf('%U')) {
- 		sLine += parseLine('%U', body);
- 	}
- 	return sLine.split(",").map(function (val) {
- 		return Number(val);
- 	});
- }
+function parseSequence(body) {
+	var sequence = [];
+	var sLine = parseLine('%S', body);
 
- module.exports = OEIS;
+	if (body.indexOf('%T')) {
+		sLine += parseLine('%T', body);
+	}
+	if (body.indexOf('%U')) {
+		sLine += parseLine('%U', body);
+	}
+	return sLine.split(",").map(function (val) {
+		return Number(val);
+	});
+}
 
- function OEIS() {
+module.exports = OEIS;
 
- }
+function OEIS() {
 
- var count = 0;
+}
 
- OEIS.prototype.getSequence = function(id) {
- 	var url = 'http://oeis.org/A' + pad(id, 6) + '/internal';
+var count = 0;
+
+/** 
+ *	
+ */
+ OEIS.prototype.getSequence = function(num, callback) {
+ 	var id = 'A' + pad(num, 6);
+ 	var url = 'http://oeis.org/' + id + '/internal';
  	
  	request(url, function (error, response, body) {
  		if (error) {
- 			throw error;
+ 			callback({error: error}, null);
  		} else {
- 			console.log(parseName(body));
+ 			var name = parseName(body);
  			var seq = parseSequence(body);
- 			console.log(seq);
+ 			callback(null, {id: id, name: name, seq: seq});
  		}
  	});
  }
@@ -69,7 +76,11 @@
 
 
  var oeis = new OEIS();
- oeis.getSequence(12);
+
+ //for (var i = 12000; i < 13000; i++)
+ oeis.getSequence(12995, function(err, data) {
+ 	console.log(data.seq[data.seq.length - 1]);
+ });
 
 
 

@@ -23,6 +23,7 @@
   },
   "homepage": "https://gitlab.com/andrewmarklloyd/node-oeis#README",
   "dependencies": {
+    "number-converter": "^1.2.1",
     "request": "^2.76.0"
   },
   "devDependencies": {
