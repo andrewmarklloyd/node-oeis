@@ -1,0 +1,14 @@
+
+image: node:argon
+
+stages:
+  - test
+  - deploy
+
+before_script:
+  - echo 'before'
+
+test:
+  stage: test
+  script:
+    - npm test
