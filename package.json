@@ -21,5 +21,8 @@
   "bugs": {
     "url": "https://gitlab.com/andrewmarklloyd/node-oeis/issues"
   },
-  "homepage": "https://gitlab.com/andrewmarklloyd/node-oeis#README"
+  "homepage": "https://gitlab.com/andrewmarklloyd/node-oeis#README",
+  "dependencies": {
+    "request": "^2.76.0"
+  }
 }

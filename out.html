@@ -1,0 +1,479 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+  
+  <head>
+  <style>
+  tt { font-family: monospace; font-size: 100%; }
+  p.editing { font-family: monospace; margin: 10px; text-indent: -10px; word-wrap:break-word;}
+  p { word-wrap: break-word; }
+  </style>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="keywords" content="OEIS,integer sequences,Sloane" />
+  
+  
+  <title>A000012 - OEIS</title>
+  <link rel="search" type="application/opensearchdescription+xml" title="OEIS" href="/oeis.xml">
+  <script>
+  function sf() {
+      if(document.location.pathname == "/" && document.f) document.f.q.focus();
+  }
+  </script>
+  </head>
+  <body bgcolor=#ffffff onload="sf()">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+    <tr><td width="100%" align="right">
+      <font size=-1>
+      
+        <a href="/login?redirect=%2fA000012%2finternal">login</a>
+      
+      </font>
+    <tr height=5><td>
+    </table>
+
+    <center>
+    <span style="font-family: sans-serif; font-size: 83%; font-style: italic">This site is supported by donations to <a href="http://oeisf.org">The OEIS Foundation</a>.</span>
+
+    <br>
+<p style="margin-top:-24px">&nbsp;</p>
+<a href="/"><img border="0" width="600" height="118" src="/Luschny4.png" alt="Logo" /></a>
+    <br>
+<p>
+
+
+<font color="green" ><strong>
+
+
+</strong></font>
+
+
+
+<br>
+
+
+    <!-- no special fonts -->
+    </center>
+  
+    <center>
+    <table border="0" cellspacing="0" cellpadding="0">
+      <tr><td>
+        
+    
+    <center>
+        <form name=f action="/search" method="GET">
+            <table cellspacing=0 cellpadding=0 border=0>
+            <tr><td>
+            <input maxLength=1024 size=55 name=q value="" title="Search Query">
+            <input type=hidden name=sort value="">
+            <input type=hidden name=language value="">
+            <input type=submit value="Search" name=go>
+            <td width=10><td>
+            <font size=-2><a href="/hints.html">Hints</a></font>
+            <tr><td colspan=2>
+            <font size=-1>
+                (Greetings from <a href="/welcome">The On-Line Encyclopedia of Integer Sequences</a>!)
+            </font>
+            </table>
+        </form>
+    </center>
+<center>
+
+    <table width="750" width="100%" cellspacing="0" cellpadding="0" border="0">
+        <tr height="1"><td>
+        <tr height=1 bgcolor="#76767F"><td>
+
+        
+        <tr bgcolor="#EEEEFF"><td valign=top>
+            <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                <tr>
+                    <td valign=top align=left width=100>
+                    
+                        <a href="/A000012">A000012</a>
+                    
+                    
+                    <td width=5>
+                    <td valign=top align=left>
+                    The simplest sequence of positive numbers: the all 1's sequence.
+                    <br><font size=-1>(Formerly M0003)</font>
+                    
+                    <td width=2>
+                    <td valign=top align=right>
+                        <font size=-2>
+                        
+                        1491
+                        </font>
+            </table>
+        
+            
+                <tr><td valign=top>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%I M0003
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%S 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%T 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%U 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%N The simplest sequence of positive numbers: the all 1&#39;s sequence.
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%C Number of ways of writing n as a product of primes.
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%C Number of ways of writing n as a sum of distinct powers of 2.
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%C Continued fraction for golden ratio A001622.
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%C Partial sums of A000007 (characteristic function of 0). - _Jeremy Gardiner_, Sep 08 2002
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%C An example of an infinite sequence of positive integers whose distinct pairwise concatenations are all primes! - Don Reble, Apr 17 2005
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%C Binomial transform of A000007; inverse binomial transform of A000079. - _Philippe Deléham_, Jul 07 2005
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%C A063524(a(n)) = 1. - _Reinhard Zumkeller_, Oct 11 2008
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%C For n &gt;= 0, let M(n) be the matrix with first row = (n n&#43;1) and 2nd row = (n&#43;1 n&#43;2). Then a(n) = absolute value of det(M(n)). - _K.V.Iyer_, Apr 11 2009
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%C The partial sums give the natural numbers (A000027). - _Daniel Forgues_, May 08 2009
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%C From _Enrique Pérez Herrero_, Sep 04 2009: (Start)
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%C a(n) is also tau_1(n) where tau_2(n) is A000005.
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%C a(n) is a completely multiplicative arithmetical function.
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%C a(n) is both squarefree and a perfect square. See A005117 and A000290. (End)
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%C Also smallest divisor of n. - _Juri-Stepan Gerasimov_, Sep 07 2009
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%C Also decimal expansion of 1/9. - _Enrique Pérez Herrero_, Sep 18 2009; corrected by _Klaus Brockhaus_, Apr 02 2010
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%C a(n) is also the number of complete graphs on n nodes. - Pablo Chavez (pchavez(AT)cmu.edu), Sep 15 2009
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%C Totally multiplicative sequence with a(p) = 1 for prime p. Totally multiplicative sequence with a(p) = a(p-1) for prime p. - _Jaroslav Krizek_, Oct 18 2009
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%C n-th prime minus phi(prime(n)); number of divisors of n-th prime minus number of perfect partitions of n-th prime; the number of perfect partitions of n-th prime number; the number of perfect partitions of n-th noncomposite number. - _Juri-Stepan Gerasimov_, Oct 26 2009
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%C For all n&gt;0, the sequence of limit values for a(n) = n!*Sum_{k&gt;=n} k/(k&#43;1)!. Also, a(n) = n^0. - _Harlan J. Brothers_, Nov 01 2009
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%C a(n) is also the number of 0-regular graphs on n vertices. - _Jason Kimberley_, Nov 07 2009
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%C Differences between consecutive n. - _Juri-Stepan Gerasimov_, Dec 05 2009
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%C From _Matthew Vandermast_, Oct 31 2010: (Start)
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%C 1) When sequence is read as a regular triangular array, T(n,k) is the coefficient of the k-th power in the expansion of (x^(n&#43;1)-1)/(x-1).
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%C 2) Sequence can also be read as a uninomial array with rows of length 1, analogous to arrays of binomial, trinomial, etc., coefficients. In a q-nomial array, T(n,k) is the coefficient of the k-th power in the expansion of ((x^q -1)/(x-1))^n, and row n has a sum of q^n and a length of (q-1)*n &#43; 1. (End)
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%C The number of maximal self-avoiding walks from the NW to SW corners of a 2 X n grid.
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%C When considered as a rectangular array, A000012 is a member of the chain of accumulation arrays that includes the multiplication table A003991 of the positive integers. The chain is ... &lt; A185906 &lt; A000007 &lt; A000012 &lt; A003991 &lt; A098358 &lt; A185904 &lt; A185905 &lt; ... (See A144112 for the definition of accumulation array.) - _Clark Kimberling_, Feb 06 2011
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%C a(n) = A007310(n&#43;1) (Modd 3) := A193680(A007310(n&#43;1)), n&gt;=0. For general Modd n (not to be confused with mod n) see a comment on A203571. The nonnegative members of the three residue classes Modd 3, called [0], [1], and [2], are shown in the array A088520, if there the third row is taken as class [0] after inclusion of 0. - _Wolfdieter Lang_, Feb 09 2012
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%C Let M = Pascal&#39;s triangle without 1&#39;s (A014410) and V = a variant of the Bernoulli numbers A027641 but starting [1/2, 1/6, 0, -1/30,...]. Then M*V = [1, 1, 1, 1,...]. - _Gary W. Adamson_, Mar 05 2012
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%C As a lower triangular array, T is an example of the fundamental generalized factorial matrices of A133314. Multiplying each n-th diagonal by t^n gives M(t) = I/(I-t*S) = I &#43; t*S &#43; (t*S)^2 &#43; ... where S is the shift operator A129184, and T = M(1). The inverse of M(t) is obtained by multiplying the first sub-diagonal of T by -t and the other sub-diagonals by zero, so A167374 is the inverse of T. Multiplying by t^n/n! gives exp(t*S) with inverse exp(-t*S). - _Tom Copeland_, Nov 10 2012
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%C The original definition of the meter was one ten-millionth of the distance from the Earth&#39;s equator to the North Pole. According to that historical definition, the length of one degree of latitude, that is 60 nautical miles, would be exactly 111111.111... meters. - _Jean-François Alcover_, Jun 02 2013
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%C Deficiency of 2^n. - _Omar E. Pol_, Jan 30 2014
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%C Consider n &gt;= 1 nonintersecting spheres each with surface area S. Define point p on sphere S_i to be a &#34;public point&#34; if and only if there exists a point q on sphere S_j, j != i, such that line segment pq INTERSECT S_i = {p} and pq INTERSECT S_j = {q}; otherwise, p is a &#34;private point.&#34; The total surface area composed of exactly all private points on all n spheres is a(n)*S = S. (&#34;The Private Planets Problem&#34; in Zeitz.) - _Rick L. Shepherd_, May 29 2014
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%C For n&gt;0, digital roots of centered 9-gonal numbers (A060544). - _Colin Barker_, Jan 30 2015
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%C Product of nonzero digits in base 2 representation of n. - _Franklin T. Adams-Watters_, May 16 2016
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%C Alternating row sums of triangle A104684. - _Wolfdieter Lang_, Sep 11 2016
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%C A fixed point of the run length transform. - _Chai Wah Wu_, Oct 21 2016
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%D L. B. W. Jolley, Summation of Series, Second Revised Edition, Dover (1961).
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%D N. J. A. Sloane and Simon Plouffe, The Encyclopedia of Integer Sequences, Academic Press, 1995 (includes this sequence).
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%D S. Wolfram, A New Kind of Science, Wolfram Media, 2002; p. 55.
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%D Paul Zeitz, The Art and Craft of Mathematical Problem Solving, The Great Courses, The Teaching Company, 2010 (DVDs and Course Guidebook, Lecture 6: &#34;Pictures, Recasting, and Points of View&#34;, pp. 32-34).
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%H Charles R Greathouse IV, &lt;a href=&#34;/A000012/b000012.txt&#34;&gt;Table of n, a(n) for n = 0..10000&lt;/a&gt; [Useful when plotting one sequence against another. See Swayne link.]
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%H David Applegate, Omar E. Pol and N. J. A. Sloane, &lt;a href=&#34;http://neilsloane.com/doc/tooth.pdf&#34;&gt;The Toothpick Sequence and Other Sequences from Cellular Automata&lt;/a&gt;
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%H Harlan Brothers, &lt;a href=&#34;http://functions.wolfram.com/GammaBetaErf/Factorial/23/01/0002/&#34;&gt;Factorial: Summation (formula 06.01.23.0002)&lt;/a&gt;, The Wolfram Functions Site - _Harlan J. Brothers_, Nov 01 2009
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%H Daniele A. Gewurz and Francesca Merola, &lt;a href=&#34;http://www.cs.uwaterloo.ca/journals/JIS/VOL6/Gewurz/gewurz5.html&#34;&gt;Sequences realized as Parker vectors of oligomorphic permutation groups&lt;/a&gt;, J. Integer Seqs., Vol. 6, 2003.
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%H A. M. Hinz, S. Klavžar, U. Milutinović, C. Petr, &lt;a href=&#34;http://dx.doi.org/10.1007/978-3-0348-0237-6&#34;&gt;The Tower of Hanoi - Myths and Maths&lt;/a&gt;, Birkhäuser 2013. See page 172. &lt;a href=&#34;http://tohbook.info&#34;&gt;Book&#39;s website&lt;/a&gt;
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%H Jerry Metzger and Thomas Richards, &lt;a href=&#34;https://cs.uwaterloo.ca/journals/JIS/VOL18/Metzger/metz1.html&#34;&gt;A Prisoner Problem Variation&lt;/a&gt;, Journal of Integer Sequences, Vol. 18 (2015), Article 15.2.7.
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%H Robert Price, &lt;a href=&#34;/A000012/a000012_1.txt&#34;&gt;Comments on A000012 concerning Elementary Cellular Automata&lt;/a&gt;, Jan 31 2016
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%H N. J. A. Sloane, &lt;a href=&#34;/A000012/a000012.html&#34;&gt;Illustration of initial terms&lt;/a&gt;
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%H N. J. A. Sloane, &lt;a href=&#34;/wiki/Catalog_of_Toothpick_and_CA_Sequences_in_OEIS&#34;&gt;Catalog of Toothpick and Cellular Automata Sequences in the OEIS&lt;/a&gt;
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%H Michael Z. Spivey and Laura L. Steil, &lt;a href=&#34;http://www.cs.uwaterloo.ca/journals/JIS/VOL9/Spivey/spivey7.html&#34;&gt;The k-Binomial Transforms and the Hankel Transform&lt;/a&gt;, Journal of Integer Sequences, Vol. 9 (2006), Article 06.1.1.
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%H D. F. Swayne, &lt;a href=&#34;/plot2.html&#34;&gt;Plot pairs of sequences in the OEIS&lt;/a&gt;
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%H Eric Weisstein&#39;s World of Mathematics, &lt;a href=&#34;http://mathworld.wolfram.com/GoldenRatio.html&#34;&gt;Golden Ratio&lt;/a&gt;
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%H Eric Weisstein&#39;s World of Mathematics, &lt;a href=&#34;http://mathworld.wolfram.com/ChromaticNumber.html&#34;&gt;Chromatic Number&lt;/a&gt;
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%H Eric Weisstein&#39;s World of Mathematics, &lt;a href=&#34;http://mathworld.wolfram.com/GraphCycle.html&#34;&gt;Graph Cycle&lt;/a&gt;
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%H Eric Weisstein&#39;s World of Mathematics, &lt;a href=&#34;http://mathworld.wolfram.com/ElementaryCellularAutomaton.html&#34;&gt;Elementary Cellular Automaton&lt;/a&gt;
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%H S. Wolfram, &lt;a href=&#34;http://wolframscience.com/&#34;&gt;A New Kind of Science&lt;/a&gt;
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%H G. Xiao, &lt;a href=&#34;http://wims.unice.fr/~wims/en_tool~number~contfrac.en.html&#34;&gt;Contfrac&lt;/a&gt;
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%H &lt;a href=&#34;/index/Cor#core&#34;&gt;Index entries for &#34;core&#34; sequences&lt;/a&gt;
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%H &lt;a href=&#34;/index/Ch#char_fns&#34;&gt;Index entries for characteristic functions&lt;/a&gt;
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%H &lt;a href=&#34;/index/Con#confC&#34;&gt;Index entries for continued fractions for constants&lt;/a&gt;
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%H &lt;a href=&#34;/index/Di#divseq&#34;&gt;Index to divisibility sequences&lt;/a&gt;
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%H &lt;a href=&#34;/index/Par#partN&#34;&gt;Index entries for related partition-counting sequences&lt;/a&gt;
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%H &lt;a href=&#34;/index/Rec#order_01&#34;&gt;Index entries for linear recurrences with constant coefficients&lt;/a&gt;, signature (1).
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%H &lt;a href=&#34;/index/Ce#cell&#34;&gt;Index entries for sequences related to cellular automata&lt;/a&gt;
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%H &lt;a href=&#34;https://oeis.org/wiki/Index_to_Elementary_Cellular_Automata&#34;&gt;Index to Elementary Cellular Automata&lt;/a&gt;
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%H &lt;a href=&#34;/index/Fi#FIXEDPOINTS&#34;&gt;Index entries for sequences that are fixed points of mappings&lt;/a&gt;
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%F a(n) = 1.
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%F G.f.: 1/(1-x).
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%F E.g.f.: exp(x).
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%F G.f.: Product_{k&gt;=0} (1 &#43; x^(2^k)). - _Zak Seidov_, Apr 06 2007
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%F Completely multiplicative with a(p^e) = 1.
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%F Regarded as a square array by antidiagonals, g.f. 1/((1-x)(1-y)), e.g.f. Sum T(n,m) x^n/n! y^m/m! = e^{x&#43;y}, e.g.f. Sum T(n,m) x^n y^m/m! = e^y/(1-x). Regarded as a triangular array, g.f. 1/((1-x)(1-xy)), e.g.f. Sum T(n,m) x^n y^m/m! = e^{xy}/(1-x). - _Franklin T. Adams-Watters_, Feb 06 2006
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%F E.g.f.: E(0)-1-x, where E(k) = 2 &#43; 2*x - 8*k^2 &#43; x^2*(2*k&#43;3)*(2*k-1)/E(k&#43;1) ; (continued fraction). - _Sergei N. Gladkovskii_, Dec 20 2013
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%F E.g.f.: E(0)-1, where E(k) = 2 &#43; x/(2*k&#43;1 - x/E(k&#43;1) ); (continued fraction). - _Sergei N. Gladkovskii_, Dec 23 2013
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%F Dirichlet g.f.: zeta(s). - _Ilya Gutkovskiy_, Aug 31 2016
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%F a(n) = Sum_{l=1..n} (-1)^(l&#43;1)*2*cos(Pi*l/(2*n&#43;1)) = 1 identically in n &gt;= 1 (for n=0 one has 0 from the undefined sum). From the Jolley reference, (429) p. 80. Interpretation: consider the n segments between x=0 and the n positive zeros of the Chebyshev polynomials S(2*n, x) (see A049310). Then the sum of the lengths of every other segment starting with the one ending in the largest zero (going from the right to the left) is 1. - _Wolfdieter Lang_, Sep 01 2016
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%e 1 &#43; 1/(1 &#43; 1/(1 &#43; 1/(1 &#43; 1/(1 &#43; ...)))) = A001622.
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%e 1/9 = 0.11111111111111...
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%e From _Wolfdieter Lang_, Feb 09 2012: (Start)
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%e Modd 7 for nonnegative odd numbers not divisible by 3:
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%e A007310: 1, 5, 7, 11, 13, 17, 19, 23, 25, 29, 31, 35, 37, ...
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%e Modd 3:  1, 1, 1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1, ...
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%e (End)
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%p seq(1, i=0..150);
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%t a[n_] := 1; Array[1 &amp;, 50] (* Joseph Biberstine (jrbibers(AT)indiana.edu), Dec 26 2006 *)
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%o (MAGMA) [1 : n in [0..100]];
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%o (PARI) {a(n) = 1};
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%o (PARI) { default(realprecision, 1080); phi = (1 &#43; sqrt(5))/2; x=contfrac(phi); for (n=1, 1001, write(&#34;b000012.txt&#34;, n-1, &#34; &#34;, x[n])); } \\ _Harry J. Smith_, May 14 2009
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%o (Haskell)
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%o a000012 = const 1
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%o a000012_list = repeat 1  -- _Reinhard Zumkeller_, May 07 2012
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%o (Maxima) makelist(1, n, 1, 30); /* _Martin Ettl_, Nov 07 2012 */
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%Y Cf. A000004, A007395, A010701, A000027, A027641, A014410, A211216, A212393, A060544, A051801, A104684.
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%Y Regular graphs A005176 (any degree), A051031 (triangular array), chosen degrees: A000012 (k=0), A059841 (k=1), A008483 (k=2), A005638 (k=3), A033301 (k=4), A165626 (k=5), A165627 (k=6), A165628 (k=7). - _Jason Kimberley_, Nov 07 2009
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%Y For other q-nomial arrays, see A007318, A027907, A008287, A035343, A063260, A063265, A171890. - _Matthew Vandermast_, Oct 31 2010
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%K nonn,core,easy,mult,cofr,cons,tabl,changed
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%O 0,1
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%A _N. J. A. Sloane_, May 16 1994
+</tt></p>
+                
+                <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt></tt></p>
+                
+            
+
+        <tr height=10><td>
+    </table>
+</center>
+
+      </td></tr>
+    </table>
+    </center>
+    
+    <p>
+    
+    <center>
+      <a href="/">Lookup</a> |
+      <a href="/wiki/Welcome"><font color="red">Welcome</font></a> |
+      <a href="/wiki/Main_Page"><font color="red">Wiki</font></a> |
+      <a href="/wiki/Special:RequestAccount">Register</a> |
+      
+      <a href="/play.html">Music</a> |
+      <a href="/plot2.html">Plot 2</a> |
+      <a href="/demo1.html">Demos</a> |
+      <a href="/wiki/Index_to_OEIS">Index</a> |
+      <a href="/Sbrowse.html">Browse</a> |
+      <a href="/more.html">More</a> |
+      <a href="/webcam">WebCam</a>
+      
+      <br>
+      
+      <a href="/Submit.html">Contribute new seq. or comment</a> |
+      <a href="/eishelp2.html">Format</a> |
+      <a href="/transforms.html">Transforms</a> |
+      <a href="/ol.html">Superseeker</a> |
+      <a href="/recent">Recent</a> |
+      <a href="/pages.html">More pages</a> 
+      
+      <br>
+      
+      <a href="/community.html">The OEIS Community</a> |
+      Maintained by <a href="http://oeisf.org">The OEIS Foundation Inc.</a> 
+    </center>
+
+    <p>
+    <center>
+   <span style="font-family: sans-serif; font-size: 83%; font-style: italic">
+    <a href="/wiki/Legal_Documents">
+    License Agreements, Terms of Use, Privacy Policy
+    </a>.
+    </span>
+    </center>
+
+    <p>
+    <center>
+    <font size=-1>Last modified November  2 23:53 EDT 2016.  Contains 277295 sequences.</font>
+    </center>
+    <p>
+    
+  </body>
+</html>
+
