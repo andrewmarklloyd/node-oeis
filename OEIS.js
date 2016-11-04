@@ -90,6 +90,14 @@
 	});
  }
 
+ function validate(num) {
+ 	if (typeof num !== 'number') {
+ 		return new TypeError('Must be a valid number');
+ 	} else {
+ 		return null;
+ 	}
+ }
+
  module.exports = OEIS;
 
 /**
@@ -101,9 +109,14 @@
 
  OEIS.prototype = {
 
-
  	getSequenceInfo: function(num, callback) {
- 		getSequenceInfo(num, callback);
+ 		var err = validate(num);
+ 		if (err) {
+ 			callback(err, null);
+ 			return;
+ 		} else {
+ 			getSequenceInfo(num, callback);	
+ 		}
  	},
 
 /**
@@ -111,13 +124,26 @@
 * contains all of the sequences in the OEIS database
 */
 getFullSequence: function(num, callback) {
-	getFullSequence(num, callback);
+	var err = validate(num);
+	if (err) {
+		callback(err, null);
+		return;
+	} else {
+		getFullSequence(num, callback);
+	}
 },
 
 /*
 * Performs synchronous scraping of sequence data to avoid overloading OEIS.org
 */
 getMultipleSequences: function(start, end, callback) {
+	var startErr = validate(start);
+	var endErr = validate(end);
+	if (startErr || endErr) {
+		callback(new TypeError('Must be a valid number'), null);
+		return;
+	}
+
 	var i = start;
 	async.whilst(function() {
 		return i <= end;
