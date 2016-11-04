@@ -4,7 +4,7 @@
   "description": "Interface for getting data from OEIS.org",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha tests"
   },
   "repository": {
     "type": "git",
@@ -24,5 +24,10 @@
   "homepage": "https://gitlab.com/andrewmarklloyd/node-oeis#README",
   "dependencies": {
     "request": "^2.76.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-http": "^3.0.0",
+    "mocha": "^3.1.2"
   }
 }
