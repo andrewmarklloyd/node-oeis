@@ -22,7 +22,6 @@ describe('OEIS', function() {
 			oeis.getSequenceInfo(123456, function(err, info) {
 				err = err;
 				data = info;
-				console.log(info);
 				try {
 				oeis.getSequenceInfo("a", function(err, info) {});	
 			} catch(e) {
