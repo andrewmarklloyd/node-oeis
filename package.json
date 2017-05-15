@@ -1,0 +1,37 @@
+{
+  "name": "node-oeis",
+  "version": "0.0.1",
+  "description": "Interface for getting data from OEIS.org",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "mocha tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/andrewmarklloyd/node-oeis.git"
+  },
+  "keywords": [
+    "oeis",
+    "sequence",
+    "math",
+    "node"
+  ],
+  "author": "Andrew Lloyd",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/andrewmarklloyd/node-oeis/issues"
+  },
+  "homepage": "https://gitlab.com/andrewmarklloyd/node-oeis#README",
+  "dependencies": {
+    "async": "^2.1.2",
+    "html-entities": "^1.2.0",
+    "number-converter": "^1.2.1",
+    "request": "^2.76.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-http": "^3.0.0",
+    "mocha": "^3.1.2"
+  }
+}

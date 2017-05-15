@@ -1,0 +1,14 @@
+
+image: node:argon
+
+stages:
+  - test
+  - deploy
+
+before_script:
+  - npm install --silent
+
+test:
+  stage: test
+  script:
+    - npm test
