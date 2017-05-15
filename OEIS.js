@@ -104,7 +104,7 @@
  function OEIS() {
 
  }
-
+ /* Define the public functions */
  OEIS.prototype = {
 
  	getSequenceInfo: function(num, callback) {
@@ -112,40 +112,40 @@
  		getSequenceInfo(num, callback);
  	},
 
-/**
-*	Retreives the B-File (https://oeis.org/A<id>/b<id>.txt) which
-* contains all of the sequences in the OEIS database
-*/
-getFullSequence: function(num, callback) {
-	validate(num);
-	getFullSequence(num, callback);
-},
-
-/*
-* Performs synchronous scraping of sequence data to avoid overloading OEIS.org
-*/
-getMultipleSequences: function(start, end, callback) {
-	validate(start);
-	validate(end);
-
-	var i = start;
-	async.whilst(function() {
-		return i <= end;
+	/**
+	*	Retreives the B-File (https://oeis.org/A<id>/b<id>.txt) which
+	* contains all of the sequences in the OEIS database
+	*/
+	getFullSequence: function(num, callback) {
+		validate(num);
+		getFullSequence(num, callback);
 	},
-	function(next) {
-		getSequenceInfo(i, function(err, info) {
-			getFullSequence(i, function(err, seq) {
-				if (err) {throw err;}
-				callback({id: info.id, name: info.name, seq: seq});
-				i++;
-				next();
+
+	/*
+	* Performs synchronous scraping of sequence data to avoid overloading OEIS.org
+	*/
+	getMultipleSequences: function(start, end, callback) {
+		validate(start);
+		validate(end);
+
+		var i = start;
+		async.whilst(function() {
+			return i <= end;
+		},
+		function(next) {
+			getSequenceInfo(i, function(err, info) {
+				getFullSequence(i, function(err, seq) {
+					if (err) {throw err;}
+					callback({id: info.id, name: info.name, seq: seq});
+					i++;
+					next();
+				});
 			});
-		});
-	},
-	function(err) {
-		if (err) {console.log(err);}
+		},
+		function(err) {
+			if (err) {console.log(err);}
+		}
+		);
 	}
-	);
-}
 }
 
