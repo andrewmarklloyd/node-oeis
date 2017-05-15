@@ -40,7 +40,7 @@ describe('OEIS', function() {
 		});
 
 		it('should return valid OEIS name', function() {
-			assert.equal(data.name, 'Lud van Beethoven, Bagatelle No. 25, \"Für Elise\".');
+			assert.equal(data.name, 'Ludwig van Beethoven, Bagatelle No. 25, \"Für Elise\".');
 		});
 
 		it('error should be TypeError', function() {
