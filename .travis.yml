@@ -1,9 +1,12 @@
 language: node_js
 node_js:
-  - "6"
-
-# safelist
+- '6'
 branches:
   only:
   - master
   - stable
+notifications:
+  slack:
+    secure: TZwCV8IjRnestnhgKx1JK533jO/ZChMGtrFc8118FtOVYOVBrfxi2xBeKX1SBi1JVE3NQ/KNo+v8DgoIdxW31lo9CEL0loC1xTqo8OdoctqourV+jA0EVetQXEDGbn6JjssvTbJ1q7Nyj4yU8nYLf7i/atEFQjcVZyyB9075SqsHRUm/IVx1IRi6HKxDe+BoaWriHWp4S0sJs/XFWGOlnUwx9XcZD+P/w/uXVLdxfCN6C6KMy73nHG1qf4wAfk/o/++cvaJ1AIs9PHoYY/SHSfSyfOzjjVGW4x8AKcN3Rm+zWj2bcdnSJFbn5WLxglj//+9dkEiblTEo4rKPARCSwdJd+lLQN7BvEqp8IiiXuYQTNuKyuCJ12C+o0az0ApwdtR22ODUDLz6NEROv8DUeIzu2CvP9eEnYjcbwHLycgcFMLsg4jMOgTZwJO8RsR7hNUkcrsdnhwgdBOI5Y6d24pI/BNEomyqZ2i6MrbXtQQHpa3PA5/1/sdD6bugj6svYdIekg8GtDiCPIEJ4gSx27KhbYrwK3TwSpSsC2ondM8bmPPHi4/igryiDHDXviH23OWMbkzAsdW3/cNiioGY1SuBag3avnjMuLEqbLGAV8cHSr1mQyxYSHKBEpm2YC0zWsGitIWkgf36esP4hITQpLO0JBouTJpkcIXEN8gU1wirc=
+    on_success: never
+    on_failure: always
