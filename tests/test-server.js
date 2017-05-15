@@ -22,6 +22,7 @@ describe('OEIS', function() {
 			oeis.getSequenceInfo(123456, function(err, info) {
 				err = err;
 				data = info;
+				console.log(info);
 				try {
 				oeis.getSequenceInfo("a", function(err, info) {});	
 			} catch(e) {
@@ -40,7 +41,7 @@ describe('OEIS', function() {
 		});
 
 		it('should return valid OEIS name', function() {
-			assert.equal(data.name, 'Ludwig van Beethoven, Bagatelle No. 25, \"Fuer Elise\".');
+			assert.equal(data.name, 'Ludwig van Beethoven, Bagatelle No. 25, \"Für Elise\".');
 		});
 
 		it('error should be TypeError', function() {
