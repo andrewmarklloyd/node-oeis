@@ -127,25 +127,37 @@
 	getMultipleSequences: function(start, end, callback) {
 		validate(start);
 		validate(end);
-
+		var list = [];
 		var i = start;
-		async.whilst(function() {
-			return i <= end;
-		},
-		function(next) {
-			getSequenceInfo(i, function(err, info) {
-				getFullSequence(i, function(err, seq) {
-					if (err) {throw err;}
-					callback({id: info.id, name: info.name, seq: seq});
-					i++;
-					next();
+		async.whilst(
+			function() {
+				return i <= end;
+			},
+			function(next) {
+				getSequenceInfo(i, function(err, info) {
+					
+					if (err) {
+						next(err, null);
+						return;
+					}
+					getFullSequence(i, function(err, seq) {
+						if (err) {
+							next(err, null);
+						} else {
+							list.push({id: info.id, name: info.name, seq: seq});
+							next(null, list);
+						}
+					});
 				});
+				i++;
+			},
+			function(err, data) {
+				if (err) {
+					callback(err, null);
+				} else {
+					callback(null, data);
+				}
 			});
-		},
-		function(err) {
-			if (err) {console.log(err);}
-		}
-		);
 	}
 }
 
