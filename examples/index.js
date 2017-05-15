@@ -4,13 +4,29 @@
 var OEIS = require('../OEIS');
 var oeis = new OEIS();
 
+function exampleGetSequenceInfo() {
+	oeis.getSequenceInfo(1, function(err, data){
+		console.log(data);
+	});
+}
 
-var size = 5;
-var start = 15000;
-var end = start + size;
+function exampleGetFullSequence() {
+	oeis.getFullSequence(1, function(err, data){
+		console.log(data);
+	});
+}
 
-console.log('running simultaneous 0 - 50000 and 50000 - 100000');
+function exampleGetMultipleSequences() {
+	var size = 1;
+	var start = 100;
+	var end = start + size;
+	oeis.getMultipleSequences(start, end, function(err, data) {
+		if (err) {
+			console.log('Error:', err);
+		} else {
+			console.log('Sequences:', data);
+		}
+	});
+}
 
-oeis.getMultipleSequences(start, end, function(err, data) {
-	console.log(err);
-});
+
